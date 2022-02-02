@@ -5,9 +5,9 @@ use colored::*;
 #[derive(Copy, Clone, Debug)]
 pub enum LogLevel {
     Nothing,
-    Message,
+    Error,
     Warning,
-    Error
+    Message,
 }
 
 impl fmt::Display for LogLevel {
