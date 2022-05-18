@@ -1,9 +1,7 @@
-mod console_logger;
-
-use console_logger::{ConsoleLogger, LogLevel};
+use rust_logger::{console_logger::*, log_level::*};
 
 fn main() {
-    let logger = ConsoleLogger::new(LogLevel::Error, true);
+    let logger = ConsoleLogger::new(LogLevel::Message, true);
 
     logger.log_message("This is a message!");
     logger.log_warning("This is a warning!");
