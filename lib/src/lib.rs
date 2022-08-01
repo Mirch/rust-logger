@@ -66,7 +66,7 @@ pub struct FileTarget {
 
 impl Target for FileTarget {
     fn log(&self, message: &str, log_level: &LogLevel) -> Result<(), Error> {
-        let mut file = OpenOptions::new()
+        let file = OpenOptions::new()
             .create(true)
             .write(true)
             .append(true)
