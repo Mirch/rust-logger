@@ -1,9 +1,17 @@
-use rust_logger::{console_logger::*, log_level::*};
+use rust_logger::*;
 
 fn main() {
-    let logger = ConsoleLogger::new(LogLevel::Message, true);
+    let console_target = ConsoleTarget::new(true);
+    let file_target = FileTarget::new("./test.txt");
 
-    logger.log_message("This is a message!");
-    logger.log_warning("This is a warning!");
-    logger.log_error("This is an error!");
+
+    let console_logger = Logger::new(LogLevel::Message, console_target);
+    let file_logger = Logger::new(LogLevel::Message, file_target);
+    let loggers = vec![console_logger, file_logger];
+
+    for logger in loggers {
+        logger.log_message("This is a message!");
+        logger.log_warning("This is a warning!");
+        logger.log_error("This is an error!");
+    }
 }
