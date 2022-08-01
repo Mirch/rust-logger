@@ -4,7 +4,7 @@ use colored::{ColoredString, Colorize};
 use core::fmt;
 use error::*;
 use std::{
-    fs::{self, File, OpenOptions},
+    fs::{OpenOptions},
     io::Write,
 };
 
